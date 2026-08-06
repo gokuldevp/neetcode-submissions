@@ -1,0 +1,13 @@
+class Solution:
+    def stringMatching(self, words: List[str]) -> List[str]:
+        length = len(words)
+        result = set()
+        words.sort(key=lambda word: len(word))
+        
+        for i in range(length):
+            for j in range(i+1,length):
+                if i!=j:
+                    if words[i] in words[j]:
+                        result.add(words[i])
+
+        return list(result)
